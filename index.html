@@ -1,0 +1,86 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clock</title>
+<link href="https://fonts.googleapis.com/css?family=Lato:100,400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+body.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+#clock {
+  margin: 0px auto;
+  text-align: center;
+  font-size: 200px;
+}
+</style>
+</head>
+<body class="dark">
+
+<!--
+TODO:
+-add fullscreen
+-make dark mode, light mode
+-flesh out, make own repo
+-better design
+--font, layout
+-submit to galaxy store as PWA?
+-add options for displaying
+--am/pm: 24hr time, etc.
+--color modes
+-background images
+-look at clock apps on store
+-adaptive power
+--setTimeout not needed every second if doing minute updates
+
+-->
+
+<div id="clock"></div>
+
+<script>
+'use strict';
+
+const SHOW_SECONDS = 1;
+const SHOW_AMPM = 0;
+
+var clock = document.getElementById('clock');
+var clockString  = '';
+
+function updateClock() {
+  var d = new Date();
+  var h = d.getHours().toString();
+  var m = d.getMinutes().toString().padStart(2, '0');
+  var s = d.getSeconds().toString().padStart(2, '0');
+  var ampm = 'am';
+  if (h > 12) {
+    h -= 12;
+    ampm = 'pm';
+  }
+  clockString = `${h}:${m}`;
+  if (SHOW_SECONDS)
+    clockString += `:${s}`;
+  if (SHOW_AMPM)
+    clockString += ampm;
+  clock.textContent = clockString;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+</body>
+</html>
