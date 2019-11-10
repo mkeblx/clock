@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+body.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+#clock {
+  margin: 0px auto;
+  text-align: center;
+  font-size: 200px;
+}
