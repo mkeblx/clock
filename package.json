@@ -1,0 +1,23 @@
+{
+  "name": "clock",
+  "version": "0.1.0",
+  "description": "basic clock PWA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkeblx/clock.git"
+  },
+  "keywords": [
+    "clock",
+    "PWA"
+  ],
+  "author": "mkeblx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mkeblx/clock/issues"
+  },
+  "homepage": "https://github.com/mkeblx/clock#readme"
+}
