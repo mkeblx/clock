@@ -18,9 +18,10 @@
 'use strict';
 
 const SHOW_SECONDS = 1;
+const NON_24HR_TIME = 1;
 const SHOW_AMPM = 0;
 
-var clock = document.getElementById('clock');
+const clock = document.getElementById('clock');
 var clockString  = '';
 
 function updateClock() {
@@ -29,14 +30,14 @@ function updateClock() {
   var m = d.getMinutes().toString().padStart(2, '0');
   var s = d.getSeconds().toString().padStart(2, '0');
   var ampm = 'am';
-  if (h > 12) {
+  if (NON_24HR_TIME && h > 12) {
     h -= 12;
     ampm = 'pm';
   }
   clockString = `${h}:${m}`;
   if (SHOW_SECONDS)
     clockString += `:${s}`;
-  if (SHOW_AMPM)
+  if (NON_24HR_TIME && SHOW_AMPM)
     clockString += ampm;
   clock.textContent = clockString;
 }
