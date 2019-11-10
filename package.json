@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/mkeblx/clock/issues"
   },
-  "homepage": "https://github.com/mkeblx/clock#readme"
+  "homepage": "https://github.com/mkeblx/clock#readme",
+  "dependencies": {
+    "fitty": "^2.2.6"
+  }
 }
