@@ -12,10 +12,11 @@
 </head>
 <body class="dark">
 
-<div id="clock"></div>
+<div id="clock">0:00</div>
 
 <input type="button" id="fullscreen-btn" value="Fullscreen">
 
+<script src="js/fitty.min.js"></script>
 <script>
 'use strict';
 
@@ -26,6 +27,16 @@ const SHOW_AMPM = 0;
 const clock = document.getElementById('clock');
 const fsBtn = document.getElementById('fullscreen-btn');
 var clockString  = '';
+
+function init() {
+  fitty('#clock', { observeMutations: {
+    subtree: 1,
+    childList: 0,
+    characterData: 1
+  }});
+  updateClock();
+  setInterval(updateClock, 1000);
+}
 
 function updateClock() {
   var d = new Date();
@@ -52,8 +63,7 @@ function fullscreen(){
   }
 }
 
-updateClock();
-setInterval(updateClock, 1000);
+init();
 </script>
 </body>
 </html>

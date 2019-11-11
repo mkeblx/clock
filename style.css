@@ -2,9 +2,18 @@
   box-sizing: border-box;
 }
 
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 100;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body.dark {
@@ -13,7 +22,9 @@ body.dark {
 }
 
 #clock {
-  margin: 0px auto;
+  margin: 0 auto;
   text-align: center;
   font-size: 200px;
+  display: inline-block;
+  white-space: nowrap;
 }
