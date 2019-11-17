@@ -21,6 +21,11 @@ body.dark {
   color: #fff;
 }
 
+body.light {
+  background-color: #fff;
+  color: #000;
+}
+
 #clock {
   margin: 0 auto;
   text-align: center;
