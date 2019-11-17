@@ -6,6 +6,7 @@ const SHOW_AMPM = 0;
 
 const clock = document.getElementById('clock');
 const fsBtn = document.getElementById('fullscreen-btn');
+const body = document.body;
 var clockString  = '';
 
 function init() {
@@ -14,6 +15,10 @@ function init() {
     childList: 0,
     characterData: 1
   }});
+
+  fsBtn.addEventListener('click', fullscreen);
+  body.addEventListener('dblclick', fullscreen);
+
   updateClock();
   setInterval(updateClock, 1000);
 }
@@ -40,7 +45,6 @@ function updateClock() {
   clock.textContent = clockString;
 }
 
-fsBtn.addEventListener('click', fullscreen);
 function fullscreen(){
   if('fullscreenEnabled' in document && document.fullscreenEnabled) {
     clock.requestFullscreen();

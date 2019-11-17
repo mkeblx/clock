@@ -32,4 +32,10 @@ body.light {
   font-size: 200px;
   display: inline-block;
   white-space: nowrap;
+  user-select: none;
+}
+
+#fullscreen-btn {
+  border: none;
+  background-color: white;
 }
