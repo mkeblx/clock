@@ -39,3 +39,14 @@ body.light {
   border: none;
   background-color: white;
 }
+
+#colon {
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
+.visible {
+  visibility: visible !important;
+}
