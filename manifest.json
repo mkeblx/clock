@@ -1,0 +1,11 @@
+{
+  "short_name": "Clock",
+  "name": "Clock PWA",
+  "icons": [
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#000000"
+}
