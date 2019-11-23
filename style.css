@@ -26,6 +26,10 @@ body.light {
   color: #000;
 }
 
+#container {
+
+}
+
 #clock {
   margin: 0 auto;
   text-align: center;
@@ -35,9 +39,35 @@ body.light {
   user-select: none;
 }
 
+#menu-container {
+  width: 100%;
+}
+
+#menu {
+  position: absolute;
+  top: 0;
+  border: 1px solid white;
+  margin: 1%;
+  width: 98%;
+  padding: 10px;
+  background-color: #222;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #eee;
+  color: #000;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
 #fullscreen-btn {
-  border: none;
-  background-color: white;
 }
 
 #colon {
