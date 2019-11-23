@@ -1,6 +1,7 @@
 'use strict';
 
-const SHOW_SECONDS = 1;
+const SHOW_SECONDS = 0;
+const BLINK_COLON = 1;
 const NON_24HR_TIME = 1;
 const SHOW_AMPM = 0;
 
@@ -60,7 +61,7 @@ function updateClock() {
   mEl.textContent = m;
   sEl.textContent = s;
 
-  if (!SHOW_SECONDS) {
+  if (!SHOW_SECONDS && BLINK_COLON) {
     colonEl.classList.toggle('hidden');
     alt++;
   }
