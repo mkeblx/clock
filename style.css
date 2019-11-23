@@ -73,6 +73,10 @@ body.light {
 #colon {
 }
 
+.hide {
+  display: none !important;
+}
+
 .hidden {
   visibility: hidden !important;
 }

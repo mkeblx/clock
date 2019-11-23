@@ -1,13 +1,13 @@
 'use strict';
 
-const SHOW_SECONDS = 0;
+const SHOW_SECONDS = 1;
 const NON_24HR_TIME = 1;
 const SHOW_AMPM = 0;
 
 const clock = document.getElementById('clock');
 const fsBtn = document.getElementById('fullscreen-btn');
 const body = document.body;
-var hEl, mEl, colonEl;
+var hEl, mEl, sEl, colonEl, colon2El;
 var clockString  = '';
 
 function init() {
@@ -20,10 +20,16 @@ function init() {
   fsBtn.addEventListener('click', fullscreen);
   body.addEventListener('dblclick', fullscreen);
 
-  clock.innerHTML = `<span id="h"></span><span id="colon">:</span><span id="m"></span>`;
   hEl = document.getElementById('h');
   mEl = document.getElementById('m');
+  sEl = document.getElementById('s');
   colonEl = document.getElementById('colon');
+  colon2El = document.getElementById('colon2');
+
+  if (!SHOW_SECONDS) {
+    colon2El.classList.add('hide');
+    sEl.classList.add('hide');
+  }
 
   updateClock();
   setInterval(updateClock, 1000);
@@ -50,14 +56,15 @@ function updateClock() {
   if (NON_24HR_TIME && SHOW_AMPM)
     clockString += ampm;
 
-  if (SHOW_SECONDS) {
-    clock.textContent = clockString;
-  } else {
-    hEl.textContent = h;
-    mEl.textContent = m;
+  hEl.textContent = h;
+  mEl.textContent = m;
+  sEl.textContent = s;
+
+  if (!SHOW_SECONDS) {
     colonEl.classList.toggle('hidden');
     alt++;
   }
+
 }
 
 function fullscreen(){
